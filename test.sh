@@ -1,6 +1,6 @@
 echo "Inside File"
 echo $test
-
+echo "MAL TEST"
 my_val="$test"
 
 # Create or overwrite the file named "file"
