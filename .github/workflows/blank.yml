@@ -23,9 +23,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v4
-        with:
-          checkout_ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/checkout@v3
+#        with:
+#          checkout_ref: ${{ github.event.pull_request.head.sha }}
       - name: Test coverage analysis
         uses: ./.github/workflows/coverage.yml
         with:
