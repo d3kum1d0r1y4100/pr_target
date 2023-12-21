@@ -23,12 +23,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          checkout_ref: ${{ github.event.pull_request.head.sha }}
       - name: Test coverage analysis
         uses: ./.github/workflows/coverage.yml
         with:
           checkout_ref: ${{ github.event.pull_request.head.sha }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
