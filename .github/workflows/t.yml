@@ -1,0 +1,20 @@
+name: String Contains Example
+
+on:
+  push:
+
+jobs:
+  check-string:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Check if string contains substring
+      if: contains(FromJSON('["deas23", "younesbelkada", "lvwerra", "lewtun"]'), github.actor)
+      run: echo "String contains 'deas'"
+
+    - name: Another step
+      if: contains('Hello world', 'foo')  # This step will be skipped
+      run: echo "This step won't be executed"
