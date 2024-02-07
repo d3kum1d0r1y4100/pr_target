@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Check if string contains substring
-      if: contains(FromJSON('["d3kum1d0r1y4", "younesbelkada", "lvwerra", "lewtun"]'), github.actor)
+      if: contains(FromJSON('["d3kum1d0r1y4100", "younesbelkada", "lvwerra", "lewtun"]'), github.actor)
       run: echo "String contains 'deas'"
 
     - name: Another step
